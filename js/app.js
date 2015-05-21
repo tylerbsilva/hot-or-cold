@@ -25,24 +25,39 @@ $(document).ready(function() {
 	});
 
 	// guess number
-	$(document).on('click', '#guessButton', function() {
-		// check if it's close
+	$('#guessButton').click(function() {
+		// get input and check if number
 		var guess = parseInt($("input[name='userGuess']").val().trim());
 		if (guess) {
+			// add to count
 			guesses+=1;
 			$("#count").text(guesses);
 			$('#userGuess').val("");
+			// check if correct
 			if (guess == randomNumber) {
 				$("#guessList").append("<li class='correct'>" + guess + "</li>");
 				$(".guessForm").hide();
-				$("#feedback").text("NICE JOB!");
-			}	else if (guess > randomNumber) {
+				$("#feedback").text("NICE JOB! The number was " + randomNumber);
+			}
+			// check if within 10
+			else if (randomNumber + 10 >= guess && randomNumber - 10 <= guess) {
 				$("#guessList").append("<li>" + guess + "</li>");
-				$("#feedback").text("Try Again");
-			} else if (guess < randomNumber) {
+				$("#feedback").text("ON FIRE!!!");
+			}
+			// check if within 25
+			else if (randomNumber + 25 >= guess && randomNumber - 25 <= guess) {
 				$("#guessList").append("<li>" + guess + "</li>");
-				$("#feedback").text("Try Again");
-			} else {
+				$("#feedback").text("Getting Warmer");
+			}
+			//check if within 50
+			else if (randomNumber + 50 >= guess && randomNumber - 50 <= guess) {
+				$("#guessList").append("<li>" + guess + "</li>");
+				$("#feedback").text("Lukewarm...");
+			}
+			// Check if over 50 away...
+			else {
+				$("#guessList").append("<li>" + guess + "</li>");
+				$("#feedback").text("COLD AS ICE.");
 			}
 		}
 	});
