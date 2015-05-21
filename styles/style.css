@@ -6,7 +6,7 @@
 .clearfix:before, .clearfix:after {
   content: " ";
   /* 1 */
-  
+
   display: table;
   /* 2 */
 }
@@ -227,12 +227,12 @@ input:focus {
 }
 :-moz-placeholder {
   /* Firefox 18- */
-  
+
   color: #95a5a6;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
-  
+
   color: #95a5a6;
 }
 :-ms-input-placeholder {
