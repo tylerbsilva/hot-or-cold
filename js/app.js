@@ -1,5 +1,5 @@
-var randomNumber = getRandom;
-var guesses = 0;
+var randomNumber = getRandom();
+var guesses = 1;
 
 $(document).ready(function() {
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
 	// click on new game - reset
 	$(".new").click(function(){
 		randomNumber = getRandom();
-		guesses = 0;
+		guesses = 1;
 		$("#count").text(guesses);
 		$(".guessForm").show();
 		$("#feedback").text("Make your Guess!");
