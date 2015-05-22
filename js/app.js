@@ -1,4 +1,4 @@
-var randomNumber = Math.floor((Math.random() * 100) + 1);
+var randomNumber = getRandom;
 var guesses = 0;
 
 $(document).ready(function() {
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 	// click on new game - reset
 	$(".new").click(function(){
-		randomNumber = Math.floor((Math.random() * 100) + 1);
+		randomNumber = getRandom();
 		guesses = 0;
 		$("#count").text(guesses);
 		$(".guessForm").show();
@@ -28,7 +28,7 @@ $(document).ready(function() {
 	$('#guessButton').click(function() {
 		// get input and check if number
 		var guess = parseInt($("input[name='userGuess']").val().trim());
-		if (guess) {
+		if (guess <= 100 && guess > 0) {
 			// add to count
 			guesses+=1;
 			$("#count").text(guesses);
@@ -69,3 +69,8 @@ $(document).ready(function() {
 				return false;
 		});
 });
+
+function getRandom() {
+  var num = Math.floor((Math.random() * 100) + 1);
+  return num;
+}
