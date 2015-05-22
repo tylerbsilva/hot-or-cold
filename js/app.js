@@ -1,4 +1,4 @@
-var randomNumber = getRandom();
+var randomNumber = Math.floor((Math.random() * 100) + 1);
 var guesses = 0;
 
 $(document).ready(function() {
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 	// click on new game - reset
 	$(".new").click(function(){
-		randomNumber = getRandom();
+		randomNumber = Math.floor((Math.random() * 100) + 1);
 		guesses = 0;
 		$("#count").text(guesses);
 		$(".guessForm").show();
