@@ -1,4 +1,4 @@
-var randomNumber = getRandom;
+var randomNumber = getRandom();
 var guesses = 0;
 
 $(document).ready(function() {
