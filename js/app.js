@@ -1,4 +1,7 @@
+//Hot and Cold, JS App written by Tyler Silva
+
 /* Global Variables */
+
 
 var randomNumber = getRandom();
 var guesses = 1;
