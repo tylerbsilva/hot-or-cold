@@ -16,7 +16,7 @@ function getRandom() {
 function getGuess(){
   var input = parseInt($("input[name='userGuess']").val().trim());
   guesses += 1;
-  if (guess <= 100 && guess > 0){
+  if (input <= 100 && guess > 0){
     $("input[name='userGuess']").removeAttr( 'required' );
     return input;
   } else {
