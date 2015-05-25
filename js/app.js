@@ -1,7 +1,5 @@
 //Hot and Cold, JS App written by Tyler Silva
 
-//testest
-
 /* Global Variables */
 
 
