@@ -18,8 +18,8 @@ $(document).ready(function() {
 	$(".new").click(function(){
 		randomNumber = Math.floor((Math.random() * 100) + 1);
 		guesses = 1;
-		$("#count").text(guesses);
-		$(".guessForm").show();
+	  $("#count").text(guesses);
+	  $(".guessForm").show();
 		$("#feedback").text("Make your Guess!");
 		$('#guessList').text('');
 	});
