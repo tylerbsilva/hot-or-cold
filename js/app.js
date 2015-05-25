@@ -1,9 +1,13 @@
 /* Global Variables */
 
-var randomNumber = Math.floor((Math.random() * 100) + 1);
+var randomNumber = getRandom();
 var guesses = 1;
 
 /* Functions */
+
+function getRandom() {
+  return Math.floor((Math.random() * 100) + 1);
+}
 
 // grabs the input from the user and returns input if it is a number between 1-100, else false
 function getGuess(){
@@ -85,7 +89,9 @@ $(document).ready(function() {
   });
 
   // guess number
-  $('#guessButton').click(function() {
+  $('.guessForm').submit(function(e) {
+    //prevent default submission
+    e.preventDefault();
     // get input and check if number
     var guess = getGuess();
     $("#count").text(guesses);
@@ -125,16 +131,4 @@ $(document).ready(function() {
       }
     }
   });
-
-  // Prevent default submission
-  $('.guessForm').submit( function(e) {
-        e.preventDefault();
-
-        return false;
-    });
 });
-
-function getRandom() {
-  var num = Math.floor((Math.random() * 100) + 1);
-  return num;
-}
